@@ -6,10 +6,11 @@
     <title>Majorcapo // Autorenhub</title>
     <style>
         :root {
-            --bg-color: #121417; /* Gunmetal Dark */
-            --card-bg: #1a1d23;
-            --accent-ice: #38bdf8; /* Ice Blue */
-            --accent-violet: #8b5cf6; /* Deep Violet */
+            --bg-base: #0b0d10;
+            --surface-card: #141820;
+            --border-color: rgba(139, 92, 246, 0.2);
+            --accent-ice: #38bdf8;
+            --accent-violet: #8b5cf6;
             --text-main: #f3f4f6;
             --text-muted: #9ca3af;
         }
@@ -17,91 +18,148 @@
         body {
             margin: 0;
             padding: 0;
-            background-color: var(--bg-color);
+            background-color: var(--bg-base);
             color: var(--text-main);
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
+            background-image: radial-gradient(circle at 50% 5%, rgba(139, 92, 246, 0.12) 0%, transparent 50%);
         }
 
         .container {
             width: 100%;
-            max-width: 480px;
-            padding: 2rem;
+            max-width: 460px;
+            padding: 2rem 1.2rem;
             box-sizing: border-box;
             text-align: center;
         }
 
-        .logo-area {
-            font-size: 1.5rem;
-            font-weight: 800;
-            letter-spacing: 2px;
+        /* Header / Author Info */
+        .author-badge {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
             color: var(--accent-ice);
             margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        h1 {
+            font-size: 1.7rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            margin: 0 0 0.2rem 0;
+            color: #ffffff;
             text-transform: uppercase;
         }
 
         .subtitle {
             color: var(--text-muted);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             margin-bottom: 2rem;
+            letter-spacing: 0.5px;
         }
 
+        /* Book Showcase Card */
         .card {
-            background-color: var(--card-bg);
-            border: 1px solid rgba(139, 92, 246, 0.2);
+            background-color: var(--surface-card);
+            border: 1px solid var(--border-color);
             border-radius: 12px;
             padding: 1.5rem;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+            margin-bottom: 1.2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            text-align: left;
         }
 
+        .card h3 {
+            font-size: 0.95rem;
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+            color: var(--accent-ice);
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .card p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+            margin-bottom: 1rem;
+        }
+
+        /* Buttons */
         .btn {
             display: block;
             width: 100%;
-            padding: 0.8rem;
-            margin-bottom: 1rem;
+            padding: 0.85rem;
             background: linear-gradient(135deg, var(--accent-violet), #6d28d9);
             color: white;
             text-decoration: none;
             font-weight: 600;
+            font-size: 0.9rem;
             border-radius: 8px;
-            transition: opacity 0.2s;
+            text-align: center;
             box-sizing: border-box;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 15px rgba(139, 92, 246, 0.25);
         }
 
         .btn:hover {
-            opacity: 0.9;
+            opacity: 0.95;
+            transform: translateY(-1px);
         }
 
         .btn-thalia {
             background: linear-gradient(135deg, #0ea5e9, #0284c7);
+            box-shadow: 0 4px 15px rgba(14, 165, 233, 0.25);
+        }
+
+        /* Form / iFrame Wrapper */
+        .form-wrapper {
+            margin-top: 0.5rem;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #0f131a;
+        }
+
+        footer {
+            margin-top: 1.5rem;
+            font-size: 0.7rem;
+            color: #4b5563;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <!-- Header / Branding -->
-        <div class="logo-area">Majorcapo</div>
+        <!-- Header -->
+        <div class="author-badge">S.T.W.O. Intelligence Hub</div>
+        <h1>Majorcapo</h1>
         <div class="subtitle">Spy-Thriller Autor // Wien</div>
 
-        <!-- Haupt-Links (Autorenhub / Visitenkarten-Ziele) -->
+        <!-- Buch-Sektion -->
         <div class="card">
-            <a href="https://www.thalia.at" target="_blank" class="btn btn-thalia">📚 "Verschwörung" bei Thalia holen</a>
-            <a href="#leseprobe" class="btn">✉️ Kostenlose Leseprobe sichern</a>
+            <h3>Neuerscheinung: Verschwörung</h3>
+            <p>Geheimdienste, Wien als Schauplatz und Jack Cerutti im Auge des Sturms. Jetzt im Buchhandel verfügbar.</p>
+            <a href="https://www.thalia.at" target="_blank" class="btn btn-thalia">📚 Bei Thalia erwerben</a>
         </div>
 
-        <!-- Tally Formular Sektion für die Leseprobe -->
+        <!-- Tally Leseproben-Sektion -->
         <div class="card" id="leseprobe">
-            <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem;">Trage dich ein und erhalte die Leseprobe direkt via Mail & Webhook:</p>
+            <h3>Kostenlose Leseprobe</h3>
+            <p>Trage dich ein und erhalte die ersten Kapitel direkt digital zugestellt.</p>
             
-            <!-- HIER SPÄTER DEINEN TALLY EMBED CODE EINFÜGEN -->
-            <iframe data-tally-src="DEINE_TALLY_FORMULAR_URL_HIER_EINFÜGEN?transparentBackground=1" width="100% " height="250" frameborder="0" marginheight="0" marginwidth="0" title="Leseprobe anfordern"></iframe>
-            <script>window.Tally||(window.Tally={load:function(){var e=document.querySelectorAll("iframe[data-tally-src]:not([src])");Array.prototype.forEach.call(e,function(e){e.src=e.dataset.tallySrc})}});if(typeof Tally!=="undefined")Tally.load();else{document.addEventListener("DOMContentLoaded",function(){Tally.load()});}</script>
+            <div class="form-wrapper">
+                <!-- ERSETZE DIESEN LINK MIT DEINER ECHTEN TALLY URL -->
+                <iframe src=https://tally.so/r/2EQoop"?transparentBackground=1" width="100%" height="260" frameborder="0" marginheight="0" marginwidth="0" title="Leseprobe anfordern"></iframe>
+            </div>
         </div>
+
+        <footer>Majorcapo // 100% Free & Stable</footer>
     </div>
 
 </body>
