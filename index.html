@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Majorcapo // Autorenhub</title>
+    <style>
+        :root {
+            --bg-color: #121417; /* Gunmetal Dark */
+            --card-bg: #1a1d23;
+            --accent-ice: #38bdf8; /* Ice Blue */
+            --accent-violet: #8b5cf6; /* Deep Violet */
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 480px;
+            padding: 2rem;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        .logo-area {
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            color: var(--accent-ice);
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+        }
+
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid rgba(139, 92, 246, 0.2);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+        }
+
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 0.8rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--accent-violet), #6d28d9);
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 8px;
+            transition: opacity 0.2s;
+            box-sizing: border-box;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+
+        .btn-thalia {
+            background: linear-gradient(135deg, #0ea5e9, #0284c7);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header / Branding -->
+        <div class="logo-area">Majorcapo</div>
+        <div class="subtitle">Spy-Thriller Autor // Wien</div>
+
+        <!-- Haupt-Links (Autorenhub / Visitenkarten-Ziele) -->
+        <div class="card">
+            <a href="https://www.thalia.at" target="_blank" class="btn btn-thalia">📚 "Verschwörung" bei Thalia holen</a>
+            <a href="#leseprobe" class="btn">✉️ Kostenlose Leseprobe sichern</a>
+        </div>
+
+        <!-- Tally Formular Sektion für die Leseprobe -->
+        <div class="card" id="leseprobe">
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem;">Trage dich ein und erhalte die Leseprobe direkt via Mail & Webhook:</p>
+            
+            <!-- HIER SPÄTER DEINEN TALLY EMBED CODE EINFÜGEN -->
+            <iframe data-tally-src="DEINE_TALLY_FORMULAR_URL_HIER_EINFÜGEN?transparentBackground=1" width="100% " height="250" frameborder="0" marginheight="0" marginwidth="0" title="Leseprobe anfordern"></iframe>
+            <script>window.Tally||(window.Tally={load:function(){var e=document.querySelectorAll("iframe[data-tally-src]:not([src])");Array.prototype.forEach.call(e,function(e){e.src=e.dataset.tallySrc})}});if(typeof Tally!=="undefined")Tally.load();else{document.addEventListener("DOMContentLoaded",function(){Tally.load()});}</script>
+        </div>
+    </div>
+
+</body>
+</html>
